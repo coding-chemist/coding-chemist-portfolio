@@ -877,14 +877,17 @@
         eyebrow: 'Behavior Analytics · Live',
         title: 'Darwin',
         tagline: 'Naturalist for modern developers. Watches how you code with AI — then judges what makes you effective.',
-        sectionLabel: 'The 4 Analyst Agents',
+        sectionLabel: 'The 7-Agent Evaluation Panel',
         streams: [
           { num: '01', name: 'Prompting Skills · Groq Llama 3.3', desc: 'Scores multi-turn prompt clarity, context-loading, and how precisely the candidate specifies intent to the AI.' },
-          { num: '02', name: 'Production Thinking · Groq Llama 3.3', desc: 'Reads decisions about error handling, edge cases, and what "done" looks like in real production code.' },
-          { num: '03', name: 'Problem Understanding · Mistral', desc: 'Long-horizon breakdowns and edge-case reasoning — measures how completely the candidate grasps the task.' },
-          { num: '04', name: 'Debugging Behavior · Gemini 1.5 Pro', desc: 'Precision-analyses error reactions, hypothesis quality, and recovery patterns when things go wrong.' }
+          { num: '02', name: 'Problem Understanding · Mistral codestral', desc: 'Long-horizon breakdowns and edge-case reasoning — measures how completely the candidate grasps the task.' },
+          { num: '03', name: 'Debugging Behavior · Cohere command-a', desc: 'Precision-analyses error reactions, hypothesis quality, and recovery patterns when things go wrong.' },
+          { num: '04', name: 'Production Thinking · Groq Llama 3.3', desc: 'Reads decisions about error handling, edge cases, and what "done" looks like in real production code.' },
+          { num: '05', name: 'Report Generator · Mistral codestral', desc: 'Synthesises across the behavioural panel — single coherent dossier rather than four disconnected verdicts.' },
+          { num: '06', name: 'Code Review Agent · Mistral codestral', desc: 'Parallel deep-dive: automated tests + LLM static analysis. Runs concurrently with the behavioural panel via ThreadPoolExecutor.' },
+          { num: '07', name: 'Chat Analysis Agent · Groq Llama 3.3', desc: '6-dimension AI collaboration score — surfaces strongest prompt, weakest prompt, and a coaching tip. The signal no traditional code review can see.' }
         ],
-        tags: ['LangGraph', 'CrewAI', 'Multi-LLM Routing', 'Groq', 'Mistral', 'Gemini', 'Monaco Editor', 'FastAPI', 'React', 'Sandbox']
+        tags: ['LangGraph', 'CrewAI', 'ThreadPoolExecutor', 'Multi-LLM Routing', 'Groq', 'Mistral', 'Cohere', 'Monaco Editor', 'FastAPI', 'React', 'Sandbox']
       }
     };
 

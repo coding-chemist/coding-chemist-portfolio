@@ -28,6 +28,7 @@
     .card-beacon { --c:#d97706; --c10:rgba(217,119,6,0.10);  --c20:rgba(217,119,6,0.22);  --ch:#b45309; }
     .card-curie  { --c:#7c3aed; --c10:rgba(124,58,237,0.10); --c20:rgba(124,58,237,0.22); --ch:#6d28d9; }
     .card-darwin { --c:#059669; --c10:rgba(5,150,105,0.10);  --c20:rgba(5,150,105,0.22);  --ch:#047857; }
+    .card-faraday{ --c:#166534; --c10:rgba(22,101,52,0.10);  --c20:rgba(22,101,52,0.22);  --ch:#14532d; }
 
     body {
       background: linear-gradient(140deg, #eef6ff 0%, #f1faf5 28%, #fffbf0 58%, #f5f0ff 100%);
@@ -463,6 +464,64 @@
       animation: blink 2s ease-in-out infinite;
     }
 
+    /* Architecting chip — for projects with spec/design done, code in progress */
+    .chip-architecting {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #475569;
+    }
+    .chip-dot-slate {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #94a3b8;
+      flex-shrink: 0;
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    /* About section — between hero and projects */
+    .about {
+      max-width: 720px;
+      margin: 0 auto 56px;
+      padding: 28px 32px;
+      background: var(--card-bg);
+      backdrop-filter: saturate(180%) blur(48px);
+      -webkit-backdrop-filter: saturate(180%) blur(48px);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.92);
+      box-shadow: 0 1px 1px rgba(0,0,0,0.02), 0 4px 8px rgba(0,0,0,0.04);
+      text-align: center;
+      opacity: 0;
+      animation: riseIn 0.6s ease 0.25s forwards;
+    }
+    .about p {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--ink);
+      margin: 0 0 18px;
+      letter-spacing: 0.005em;
+    }
+    .about-cta {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: #fff;
+      background: #166534;
+      text-decoration: none;
+      padding: 9px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: all 0.22s ease;
+      white-space: nowrap;
+    }
+    .about-cta:hover { filter: brightness(0.88); }
+
     /* Card action links */
     .card-links {
       display: flex;
@@ -622,6 +681,14 @@
     <div class="hero">
       <h1><em>coding</em>-chemist</h1>
       <p>Where Science Meets Intelligence</p>
+    </div>
+
+    <!-- About -->
+    <div class="about">
+      <p>
+        <strong>Senior AI/ML Engineer.</strong> Chemistry MSc, MS Data Science. Domain isn't a constraint. Building citation-grounded AI systems where evidence matters — across any field.
+      </p>
+      <a href="https://www.linkedin.com/in/sindhujasivaraman/" target="_blank" class="about-cta" title="Resume available on request — DM me on LinkedIn">Request resume →</a>
     </div>
 
     <!-- Projects -->
@@ -797,6 +864,47 @@
       </div>
     </div>
 
+    <!-- Faraday -->
+    <div class="card card-faraday" style="animation-delay: 0.73s;">
+      <div class="card-head">
+        <div class="card-identity">
+          <svg width="28" height="28" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M2 5 L11 7 L11 19 L2 17 Z" fill="none" stroke="#166534" stroke-width="1.2"/>
+            <path d="M20 5 L11 7 L11 19 L20 17 Z" fill="none" stroke="#166534" stroke-width="1.2"/>
+            <line x1="4" y1="9" x2="9" y2="10" stroke="#166534" stroke-width="0.7"/>
+            <line x1="4" y1="11.5" x2="9" y2="12.5" stroke="#166534" stroke-width="0.7"/>
+            <line x1="4" y1="14" x2="8" y2="14.8" stroke="#166534" stroke-width="0.7"/>
+            <circle cx="15.5" cy="11" r="1.6" fill="none" stroke="#166534" stroke-width="0.8"/>
+            <line x1="13.9" y1="11" x2="11" y2="10.4" stroke="#166534" stroke-width="0.6"/>
+            <line x1="17.1" y1="11" x2="18.6" y2="11.3" stroke="#166534" stroke-width="0.6"/>
+          </svg>
+          <h2>Faraday</h2>
+        </div>
+        <div class="chip-architecting">
+          <span class="chip-dot-slate"></span>
+          Architecting
+        </div>
+      </div>
+
+      <p class="card-desc">
+        AI-assisted lab notebook for industry chemists. ALCOA-compliant audit trails, Lab Memory natural-language search across past experiments, anomaly detection, and editable document UX — 21 CFR Part 11 awareness without enterprise-tool bloat.
+      </p>
+      <button class="read-more" onclick="openModal('faraday')">read more →</button>
+
+      <div class="card-rule"></div>
+
+      <div class="tags">
+        <span class="tag">RAG</span>
+        <span class="tag">LangChain</span>
+        <span class="tag">FAISS</span>
+        <span class="tag">Gemini Flash</span>
+        <span class="tag">ALCOA</span>
+        <span class="tag">21 CFR Part 11</span>
+        <span class="tag">Editable Doc UX</span>
+        <span class="tag">FastAPI</span>
+      </div>
+    </div>
+
     </div><!-- /cards-grid -->
 
     <!-- Footer -->
@@ -888,6 +996,22 @@
           { num: '07', name: 'Chat Analysis Agent · Groq Llama 3.3', desc: '6-dimension AI collaboration score — surfaces strongest prompt, weakest prompt, and a coaching tip. The signal no traditional code review can see.' }
         ],
         tags: ['LangGraph', 'CrewAI', 'ThreadPoolExecutor', 'Multi-LLM Routing', 'Groq', 'Mistral', 'Cohere', 'Monaco Editor', 'FastAPI', 'React', 'Sandbox']
+      },
+      faraday: {
+        cls: 'card-faraday',
+        eyebrow: 'AI-Assisted Lab Notebook · Architecting',
+        title: 'Faraday',
+        tagline: "Your lab's memory. Record like Faraday. Search like Google. An ELN designed for industry chemists in regulated labs — ALCOA-compliant audit trails, Lab Memory natural-language search, anomaly detection, and an editable document UX that doesn't feel like a form.",
+        sectionLabel: 'The v0.1 Surface',
+        streams: [
+          { num: '01', name: 'Editor — Editable Doc UX', desc: 'Block-based document editor where chemistry happens in prose, not forms. Reagents, observations, instrument data — each a structured block, all editable like Word. The wedge ELN incumbents miss.' },
+          { num: '02', name: 'Lab Memory — Watch · Ask · Compare', desc: 'Faraday is not a chatbot — it is your lab\'s memory. Watch surfaces past runs proactively while you work. Ask returns visual answers (charts, not paragraphs). Compare puts N experiments side by side.' },
+          { num: '03', name: 'Reagent Setup — 5 Methods', desc: 'Type-ahead search, CAS lookup, barcode-image scan, inventory pick, custom compound entry — all routes to the same structured reagent table. PubChem-backed where possible.' },
+          { num: '04', name: 'Instrument Ingest — NMR + HPLC', desc: 'Drag-drop instrument files. AI identifies format and structures the data into the experiment record. Source file preserved as the legal artifact; parsed data is derivative.' },
+          { num: '05', name: 'Anomaly Detection — 3 Quiet Checks', desc: 'Stoichiometry sanity, SOP deviation flagging, and history comparison. Surfaces concerns as soft chips, never blocks the chemist. Builds trust by being right when it speaks.' },
+          { num: '06', name: 'Audit Trail — ALCOA + Witness', desc: 'System-generated timestamps, immutable change history, manual "Witnessed by [name]" field. Designed for 21 CFR Part 11 awareness; full cryptographic signatures land in v0.2 with auth.' }
+        ],
+        tags: ['RAG', 'LangChain', 'FAISS', 'Gemini Flash', 'with_fallbacks', 'ALCOA', '21 CFR Part 11', 'Editable Doc UX', 'FastAPI', 'React', 'PubChem', 'RDKit']
       }
     };
 
